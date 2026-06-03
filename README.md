@@ -1,16 +1,53 @@
-# React + Vite
+# Kokkonda Harshavardhan — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance personal portfolio website built to showcase projects, skills, and professional experience. Designed with a sleek dark theme, emerald accents, and smooth scroll animations.
 
-Currently, two official plugins are available:
+![Portfolio Preview](./public/favicon.svg) <!-- Replace with an actual screenshot once deployed -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
+**[Insert your Vercel Link Here]**
 
-## React Compiler
+## ✨ Features
+- **Responsive Design:** Fully optimized for desktop, tablet, and mobile devices.
+- **Framer Motion Animations:** Smooth scroll-triggered fade-ins and dynamic elements.
+- **Interactive Navigation:** Blur-effect sticky navbar with an active section highlight that tracks your scroll position.
+- **Real-Time Contact Form:** Fully functional form integrated with Web3Forms (no backend required, messages go straight to email).
+- **Fast Performance:** Built on Vite for lightning-fast HMR and highly optimized production builds.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
+- **Frontend Framework:** React 19 + Vite
+- **Styling:** Vanilla CSS + Tailwind CSS (for utility layouts)
+- **Animations:** Framer Motion
+- **Icons:** Custom inline SVGs
+- **Form API:** Web3Forms
+- **Deployment:** Vercel
 
-## Expanding the ESLint configuration
+## 💻 Running Locally
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+To run this project on your local machine:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Harshavardhan2006/My-Portfolio.git
+   cd My-Portfolio/portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   The site will be available at `http://localhost:5173`.
+
+## 📬 Contact Form Setup
+If you fork this repo, you need to configure your own Web3Forms access key:
+1. Get a free key at [Web3Forms](https://web3forms.com/).
+2. Open `src/App.jsx`.
+3. Locate the `handleFormSubmit` function and replace the `access_key` value with your own.
+
+## 📄 License
+This project is open-source and available under the [MIT License](LICENSE).

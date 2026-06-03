@@ -28,9 +28,9 @@
     "tailwindcss": "^3.4.19",
     "vite": "^8.0.12"
   },
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "description": "Portfolio website of Kokkonda Harshavardhan, built with React, Vite, and Framer Motion.",
   "main": "eslint.config.js",
-  "keywords": [],
-  "author": "",
+  "keywords": ["portfolio", "react", "vite", "framer-motion", "developer"],
+  "author": "Kokkonda Harshavardhan",
   "license": "ISC"
 }
