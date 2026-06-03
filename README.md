@@ -1,8 +1,8 @@
 # Hi there, I'm Kokkonda Harshavardhan 👋
 
-I'm a **Full Stack Developer** and Computer Science Engineering student passionate about software development, modern web technologies, and solving real-world problems through technology. My goal is to build scalable, impactful, user-centric digital solutions.
+I'm a Computer Science Engineering student passionate about software development, modern web technologies, and solving real-world problems through technology. My goal is to build scalable, impactful, user-centric digital solutions.
 
-**[🌐 View My Live Portfolio](https://your-vercel-link.vercel.app)**  <!-- Replace with your deployed Vercel link -->
+**[🌐 View My Live Portfolio](https://kokkonda-harshavardhan-portfolio.vercel.app/)**
 
 ---
 
