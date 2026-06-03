@@ -1,53 +1,56 @@
-# Kokkonda Harshavardhan — Developer Portfolio
+# Hi there, I'm Kokkonda Harshavardhan 👋
 
-A modern, high-performance personal portfolio website built to showcase projects, skills, and professional experience. Designed with a sleek dark theme, emerald accents, and smooth scroll animations.
+I'm a **Full Stack Developer** and Computer Science Engineering student passionate about software development, modern web technologies, and solving real-world problems through technology. My goal is to build scalable, impactful, user-centric digital solutions.
 
-![Portfolio Preview](./public/favicon.svg) <!-- Replace with an actual screenshot once deployed -->
+**[🌐 View My Live Portfolio](https://your-vercel-link.vercel.app)**  <!-- Replace with your deployed Vercel link -->
 
-## 🚀 Live Demo
-**[Insert your Vercel Link Here]**
+---
 
-## ✨ Features
-- **Responsive Design:** Fully optimized for desktop, tablet, and mobile devices.
-- **Framer Motion Animations:** Smooth scroll-triggered fade-ins and dynamic elements.
-- **Interactive Navigation:** Blur-effect sticky navbar with an active section highlight that tracks your scroll position.
-- **Real-Time Contact Form:** Fully functional form integrated with Web3Forms (no backend required, messages go straight to email).
-- **Fast Performance:** Built on Vite for lightning-fast HMR and highly optimized production builds.
+## 🚀 About Me
+- 🎓 Pursuing B.Tech in Computer Science at SR University, Warangal (CGPA: 9.1/10)
+- 💻 I specialize in the **MERN Stack**, REST APIs, and AI Integrations
+- 📸 Beyond coding, photography sharpens my eye for detail, which I bring directly to UI/UX work
+- 🌱 Always learning new technologies and continuously improving my development skills
 
-## 🛠️ Tech Stack
-- **Frontend Framework:** React 19 + Vite
-- **Styling:** Vanilla CSS + Tailwind CSS (for utility layouts)
-- **Animations:** Framer Motion
-- **Icons:** Custom inline SVGs
-- **Form API:** Web3Forms
-- **Deployment:** Vercel
+## 🛠️ Technical Arsenal
 
-## 💻 Running Locally
+| Category | Skills |
+|---|---|
+| **Languages** | Java, JavaScript, TypeScript, SQL |
+| **Frontend** | React.js, HTML, CSS, Tailwind CSS |
+| **Backend** | Node.js, Express.js, REST APIs, JWT Auth |
+| **Database** | MongoDB, MongoDB Atlas |
+| **Tools** | Git, GitHub, Figma, Vite, Vercel, Cloudinary, VS Code |
+| **CS Core** | Data Structures, Algorithms, DBMS, OS, OOP |
 
-To run this project on your local machine:
+---
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Harshavardhan2006/My-Portfolio.git
-   cd My-Portfolio/portfolio
-   ```
+## 💻 Featured Projects
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+### 1. [Student Resource Sharing Platform](https://github.com/Harshavardhan2006/DevOps-Full-Stack-Project)
+A full-stack MERN platform where students can upload, browse, search, share, and download educational resources like notes, PDFs, and assignments.
+**Stack:** React, Node.js, Express.js, MongoDB, JWT, Cloudinary
 
-3. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-   The site will be available at `http://localhost:5173`.
+### 2. [CodeLens AI](https://github.com/Harshavardhan2006/Code-Lens-AI)
+An AI-powered code explanation and analysis platform that helps developers understand, improve, and optimize their code utilizing the Groq API.
+**Stack:** React, Vite, Node.js, Express.js, Groq API
 
-## 📬 Contact Form Setup
-If you fork this repo, you need to configure your own Web3Forms access key:
-1. Get a free key at [Web3Forms](https://web3forms.com/).
-2. Open `src/App.jsx`.
-3. Locate the `handleFormSubmit` function and replace the `access_key` value with your own.
+---
 
-## 📄 License
-This project is open-source and available under the [MIT License](LICENSE).
+## 🎓 Certifications
+- **Data Structures & Algorithms** — upGrad (2024)
+- **Deep Learning Fundamentals** — upGrad (2024)
+- **Java Full Stack Developer** — EduSkills (2023)
+- **CCNA: Introduction to Networks** — Cisco (2023)
+
+---
+
+## 📫 Let's Connect
+
+- **Email:** [kokkondaharshavardhan@gmail.com](mailto:kokkondaharshavardhan@gmail.com)
+- **LinkedIn:** [in/harshavardhan-9a9336322](https://linkedin.com/in/harshavardhan-9a9336322)
+- **GitHub:** [@Harshavardhan2006](https://github.com/Harshavardhan2006)
+
+<br/>
+
+> *"Building scalable web applications and crafting intuitive digital experiences."*
