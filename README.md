@@ -2,7 +2,7 @@
 
 I'm a Computer Science Engineering student passionate about software development, modern web technologies, and solving real-world problems through technology. My goal is to build scalable, impactful, user-centric digital solutions.
 
-**[🌐 View My Live Portfolio](https://kokkonda-harshavardhan-portfolio.vercel.app/)**
+**[View My Live Portfolio](https://kokkonda-harshavardhan-portfolio.vercel.app/)**
 
 ---
 
