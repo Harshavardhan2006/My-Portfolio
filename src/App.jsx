@@ -95,29 +95,17 @@ const fadeIn = {
   visible: (i = 0) => ({ opacity: 1, transition: { duration: 0.5, delay: i * 0.08 } }),
 };
 
-// ── Component ─────────────────────────────────────────────────────────────
-export default function App() {
+const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const [showBackToTop, setShowBackToTop] = useState(false);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [formStatus, setFormStatus] = useState(null); // null | 'sent' | 'error' | 'loading'
-  const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
-  const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 40);
-      setShowBackToTop(window.scrollY > 500);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Active section tracker
   useEffect(() => {
     const sections = NAV_LINKS.map(l => document.getElementById(l.toLowerCase())).filter(Boolean);
     const observer = new IntersectionObserver(
@@ -131,6 +119,110 @@ export default function App() {
     sections.forEach(s => observer.observe(s));
     return () => observer.disconnect();
   }, []);
+
+  return (
+    <nav style={{
+      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
+      background: scrolled ? 'rgba(8,12,16,0.92)' : 'transparent',
+      backdropFilter: scrolled ? 'blur(16px)' : 'none',
+      borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : '1px solid transparent',
+      transition: 'all 0.4s ease',
+    }}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
+          <div style={{ fontFamily: 'DM Mono, monospace', fontSize: '13px', letterSpacing: '0.15em', color: 'var(--emerald)' }}>
+            HV<span style={{ color: '#4b5563' }}>.dev</span>
+          </div>
+          
+          {/* Desktop nav */}
+          <div className="nav-desktop">
+            {NAV_LINKS.map(link => (
+              <a
+                key={link}
+                href={`#${link.toLowerCase()}`}
+                className={`nav-link${activeSection === link.toLowerCase() ? ' is-active' : ''}`}
+              >{link}</a>
+            ))}
+          </div>
+
+          {/* Mobile hamburger toggle */}
+          <button onClick={() => setMenuOpen(!menuOpen)} className="nav-mobile-toggle" style={{ color: '#9ca3af' }} aria-label="Toggle menu">
+            {menuOpen ? <CloseIcon /> : <MenuIcon />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            style={{ background: '#0e1318', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+          >
+            <div style={{ padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              {NAV_LINKS.map(link => (
+                <a key={link} href={`#${link.toLowerCase()}`} onClick={() => {
+                  // Tiny timeout lets native smooth scroll start, GPU opacity fade won't abort it
+                  setTimeout(() => setMenuOpen(false), 50);
+                }}
+                  style={{
+                    display: 'block',
+                    padding: '12px 0', fontSize: '13px', letterSpacing: '0.1em',
+                    textTransform: 'uppercase', borderBottom: '1px solid rgba(255,255,255,0.04)',
+                    color: activeSection === link.toLowerCase() ? 'var(--emerald)' : '#9ca3af',
+                    transition: 'color 0.2s',
+                  }}>
+                  {link}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
+  );
+};
+
+const BackToTop = () => {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setShowBackToTop(window.scrollY > 500);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  return (
+    <AnimatePresence>
+      {showBackToTop && (
+        <motion.button
+          className="back-to-top"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 16 }}
+          transition={{ duration: 0.25 }}
+          aria-label="Back to top"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '18px', height: '18px' }}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </motion.button>
+      )}
+    </AnimatePresence>
+  );
+};
+
+// ── Component ─────────────────────────────────────────────────────────────
+export default function App() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formStatus, setFormStatus] = useState(null); // null | 'sent' | 'error' | 'loading'
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
+  const heroY = useTransform(scrollYProgress, [0, 1], ['0%', '18%']);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   const handleFormChange = (e) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -405,63 +497,7 @@ export default function App() {
       <div className="noise" />
 
       {/* ── NAVIGATION ── */}
-      <nav style={{
-        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
-        background: scrolled ? 'rgba(8,12,16,0.92)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(16px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : '1px solid transparent',
-        transition: 'all 0.4s ease',
-      }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '64px' }}>
-            <div style={{ fontFamily: 'DM Mono, monospace', fontSize: '13px', letterSpacing: '0.15em', color: 'var(--emerald)' }}>
-              HV<span style={{ color: '#4b5563' }}>.dev</span>
-            </div>
-            
-            {/* Desktop nav */}
-            <div className="nav-desktop">
-              {NAV_LINKS.map(link => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
-                  className={`nav-link${activeSection === link.toLowerCase() ? ' is-active' : ''}`}
-                >{link}</a>
-              ))}
-            </div>
-
-            {/* Mobile hamburger toggle */}
-            <button onClick={() => setMenuOpen(!menuOpen)} className="nav-mobile-toggle" style={{ color: '#9ca3af' }} aria-label="Toggle menu">
-              {menuOpen ? <CloseIcon /> : <MenuIcon />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              style={{ background: '#0e1318', borderBottom: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden' }}
-            >
-              <div style={{ padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                {NAV_LINKS.map(link => (
-                  <a key={link} href={`#${link.toLowerCase()}`} onClick={() => setMenuOpen(false)}
-                    style={{
-                      padding: '10px 0', fontSize: '13px', letterSpacing: '0.1em',
-                      textTransform: 'uppercase', borderBottom: '1px solid rgba(255,255,255,0.04)',
-                      color: activeSection === link.toLowerCase() ? 'var(--emerald)' : '#9ca3af',
-                      transition: 'color 0.2s',
-                    }}>
-                    {link}
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
+      <Navbar />
 
       {/* ── HERO ── */}
       <section id="home" ref={heroRef} className="grid-bg" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: '64px' }}>
@@ -862,23 +898,7 @@ export default function App() {
       </footer>
 
       {/* ── BACK TO TOP ── */}
-      <AnimatePresence>
-        {showBackToTop && (
-          <motion.button
-            className="back-to-top"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 16 }}
-            transition={{ duration: 0.25 }}
-            aria-label="Back to top"
-          >
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ width: '18px', height: '18px' }}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-            </svg>
-          </motion.button>
-        )}
-      </AnimatePresence>
+      <BackToTop />
     </div>
   );
 }
