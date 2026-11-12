@@ -59,6 +59,15 @@ const SKILLS = [
 const PROJECTS = [
   {
     number: '01',
+    title: 'Mirage Run',
+    description: 'A 3D endless runner game set in a desert world, built in Unity with C#. Dodge obstacles, keep your speed, and chase a higher score the longer you survive.',
+    stack: ['Unity', 'C#', '3D Game Design'],
+    github: 'https://github.com/Harshavardhan2006/MirageRun',
+    live: '',
+    accent: '#d4a843',
+  },
+  {
+    number: '02',
     title: 'Student Resource Sharing Platform',
     description: 'A full-stack MERN platform where students can upload, browse, search, share, and download educational resources — notes, PDFs, and assignments.',
     stack: ['React', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Cloudinary'],
@@ -67,7 +76,7 @@ const PROJECTS = [
     accent: '#10b981',
   },
   {
-    number: '02',
+    number: '03',
     title: 'CodeLens AI',
     description: 'An AI-powered code explanation and analysis platform that helps developers understand, improve, and optimize their code utilizing the Groq API.',
     stack: ['React', 'Vite', 'Node.js', 'Express.js', 'Groq API'],
@@ -710,16 +719,16 @@ export default function App() {
 
                   {/* Right actions */}
                   <div className="project-right-actions" style={{ padding: '48px 40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '12px', background: 'rgba(255,255,255,0.01)' }}>
-                    <a href={github} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 20px', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '2px', color: '#9ca3af', fontSize: '12px', letterSpacing: '0.08em', textTransform: 'uppercase', transition: 'all 0.25s' }}
+                    {github && <a href={github} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 20px', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '2px', color: '#9ca3af', fontSize: '12px', letterSpacing: '0.08em', textTransform: 'uppercase', transition: 'all 0.25s' }}
                       onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)'; e.currentTarget.style.color = 'var(--cream)'; }}
                       onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'; e.currentTarget.style.color = '#9ca3af'; }}>
                       <GithubIcon /> View Source
-                    </a>
-                    <a href={live} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 20px', background: accent, borderRadius: '2px', color: '#080c10', fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', transition: 'all 0.25s' }}
+                    </a>}
+                    {live && <a href={live} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 20px', background: accent, borderRadius: '2px', color: '#080c10', fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', transition: 'all 0.25s' }}
                       onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = `0 8px 24px ${accent}40`; }}
                       onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}>
                       <ExternalIcon /> Live Demo
-                    </a>
+                    </a>}
                   </div>
                 </div>
               </motion.div>
