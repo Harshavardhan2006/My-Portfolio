@@ -16,24 +16,30 @@ I'm a Computer Science Engineering student passionate about software development
 
 | Category | Skills |
 |---|---|
-| **Languages** | Java, JavaScript, TypeScript, SQL |
+| **Languages** | Java, JavaScript, TypeScript, C#, SQL |
 | **Frontend** | React.js, HTML, CSS, Tailwind CSS |
 | **Backend** | Node.js, Express.js, REST APIs, JWT Auth |
 | **Database** | MongoDB, MongoDB Atlas |
-| **Tools** | Git, GitHub, Figma, Vite, Vercel, Cloudinary, VS Code |
+| **Tools & Game Dev** | Unity, Git, GitHub, Figma, Vite, Vercel, Render, Cloudinary, VS Code |
 | **CS Core** | Data Structures, Algorithms, DBMS, OS, OOP |
 
 ---
 
 ## 💻 Featured Projects
 
-### 1. [Student Resource Sharing Platform](https://github.com/Harshavardhan2006/DevOps-Full-Stack-Project)
-A full-stack MERN platform where students can upload, browse, search, share, and download educational resources like notes, PDFs, and assignments.
-**Stack:** React, Node.js, Express.js, MongoDB, JWT, Cloudinary
+### 1. [Mirage Run](https://github.com/Harshavardhan2006/MirageRun)
+A 3D endless runner game set in a desert world, built in Unity with C#. Dodge obstacles, keep your speed, and chase a higher score the longer you survive.
+**Stack:** Unity, C#, 3D Game Design
 
-### 2. [CodeLens AI](https://github.com/Harshavardhan2006/Code-Lens-AI)
+### 2. [Student Resource Sharing Platform](https://github.com/Harshavardhan2006/DevOps-Full-Stack-Project)
+A full-stack MERN platform where students can upload, browse, search, share, and download educational resources like notes, PDFs, and assignments.
+**Stack:** React, Node.js, Express.js, MongoDB, JWT, Cloudinary  
+**Live Demo:** [student-resource-platform-neon.vercel.app](https://student-resource-platform-neon.vercel.app/)
+
+### 3. [CodeLens AI](https://github.com/Harshavardhan2006/Code-Lens-AI)
 An AI-powered code explanation and analysis platform that helps developers understand, improve, and optimize their code utilizing the Groq API.
-**Stack:** React, Vite, Node.js, Express.js, Groq API
+**Stack:** React, Vite, Node.js, Express.js, Groq API  
+**Live Demo:** [code-lens-ai-nine.vercel.app](https://code-lens-ai-nine.vercel.app/)
 
 ---
 
