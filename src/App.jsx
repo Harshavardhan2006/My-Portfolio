@@ -62,8 +62,9 @@ const PROJECTS = [
     title: 'Mirage Run',
     description: 'A 3D endless runner game set in a desert world, built in Unity with C#. Dodge obstacles, keep your speed, and chase a higher score the longer you survive.',
     stack: ['Unity', 'C#', '3D Game Design'],
-    github: 'https://github.com/Harshavardhan2006/MirageRun',
-    live: '',
+    github: 'https://github.com/Harshavardhan2006/Mirage-Run',
+    live: 'https://lnkd.in/p/dKjvGTWa',
+    liveLabel: 'LinkedIn Post',
     accent: '#d4a843',
   },
   {
@@ -704,7 +705,7 @@ export default function App() {
           </motion.div>
 
           <div style={{ display: 'grid', gap: '24px' }}>
-            {PROJECTS.map(({ number, title, description, stack, github, live, accent }, i) => (
+            {PROJECTS.map(({ number, title, description, stack, github, live, liveLabel, accent }, i) => (
               <motion.div key={title} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i} className="project-card">
                 <div className="project-inner-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '0' }}>
                   {/* Left stripe */}
@@ -727,7 +728,7 @@ export default function App() {
                     {live && <a href={live} style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '14px 20px', background: accent, borderRadius: '2px', color: '#080c10', fontSize: '12px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', transition: 'all 0.25s' }}
                       onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = `0 8px 24px ${accent}40`; }}
                       onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}>
-                      <ExternalIcon /> Live Demo
+                      <ExternalIcon /> {liveLabel || 'Live Demo'}
                     </a>}
                   </div>
                 </div>
